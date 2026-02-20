@@ -15,3 +15,28 @@ Contributions are welcome! Please read `CONTRIBUTING.md` to get started.
 ## License
 
 This project is licensed under the MIT License – see the `LICENSE` file for details.
+
+## Sims 4 Mods AI Organizer Utility
+
+A standalone helper script is included at `sims4_mod_organizer.py` for players who want to scan and organize a Sims 4 Mods folder.
+
+### What it does
+- Scans mod files (`.package`, `.ts4script`, and common archives)
+- Categorizes files with rule-based matching
+- Uses an optional AI fallback classifier (OpenAI-compatible API) for unknown files
+- Detects duplicate files via SHA-256 hash
+- Generates a JSON inventory report
+- Can preview or apply file moves into category folders
+
+### Quick start
+```bash
+python3 sims4_mod_organizer.py "/path/to/The Sims 4/Mods"
+python3 sims4_mod_organizer.py "/path/to/The Sims 4/Mods" --organize
+python3 sims4_mod_organizer.py "/path/to/The Sims 4/Mods" --organize --apply
+```
+
+### Optional AI setup
+Set these environment variables before running:
+- `OPENAI_API_KEY` (required for AI fallback)
+- `OPENAI_MODEL` (optional, default `gpt-4o-mini`)
+- `OPENAI_BASE_URL` (optional for OpenAI-compatible providers)
